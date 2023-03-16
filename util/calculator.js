@@ -1,11 +1,11 @@
 export const initialState = {
-  currentValue: "0",
+  currentValue: '0',
   operator: null,
   previousValue: null,
 };
 
 export const handleNumber = (value, state) => {
-  if (state.currentValue === "0") {
+  if (state.currentValue === '0') {
     return { currentValue: `${value}` };
   }
 
@@ -22,22 +22,22 @@ const handleEqual = (state) => {
   const resetState = { operator: null, previousValue: null };
 
   switch (operator) {
-    case "+":
+    case '+':
       return {
         currentValue: `${previous + current}`,
         ...resetState,
       };
-    case "-":
+    case '-':
       return {
         currentValue: `${previous - current}`,
         ...resetState,
       };
-    case "*":
+    case '*':
       return {
         currentValue: `${previous * current}`,
         ...resetState,
       };
-    case "/":
+    case '/':
       return {
         currentValue: `${previous / current}`,
         ...resetState,
@@ -51,25 +51,25 @@ const handleEqual = (state) => {
 // calculator function
 const calculator = (type, value, state) => {
   switch (type) {
-    case "number":
+    case 'number':
       return handleNumber(value, state);
-    case "clear":
+    case 'clear':
       return initialState;
-    case "posneg":
+    case 'posneg':
       return {
         currentValue: `${parseFloat(state.currentValue) * -1}`,
       };
-    case "percentage":
+    case 'percentage':
       return {
         currentValue: `${parseFloat(state.currentValue) * 0.01}`,
       };
-    case "operator":
+    case 'operator':
       return {
         operator: value,
         previousValue: state.currentValue,
-        currentValue: "0",
+        currentValue: '0',
       };
-    case "equal":
+    case 'equal':
       return handleEqual(state);
     default:
       return state;
