@@ -63,9 +63,9 @@ export default class App extends Component {
           </Row>
 
           <Row>
-            <Button text="5" onPress={() => this.HandleTap("number", 5)} />
-            <Button text="6" onPress={() => this.HandleTap("number", 6)} />
-            <Button text="7" onPress={() => this.HandleTap("number", 7)} />
+            <Button text="4" onPress={() => this.HandleTap("number", 5)} />
+            <Button text="5" onPress={() => this.HandleTap("number", 6)} />
+            <Button text="6" onPress={() => this.HandleTap("number", 7)} />
             <Button
               text="-"
               theme="accent"
